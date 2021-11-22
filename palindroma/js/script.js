@@ -6,7 +6,7 @@
 let userWord = prompt('inserisci una parola');
 
 // Verifico che la parola sia palindroma e stampo un messaggio
-if( parolaPalindroma(userWord) === userWord.length ) {
+if( parolaPalindroma(userWord) ) {
     alert('la parola è palindroma');
 } else {
     alert('la parola non è palindroma');
@@ -17,6 +17,7 @@ if( parolaPalindroma(userWord) === userWord.length ) {
 // userWord --> parola che verrà verificata 
 function parolaPalindroma (toVerifyWord) {
 
+    let wordPalindrome = false;
     let wordCompare = 0;
     const wordToVerifyArray = toVerifyWord.split('');
     const reverseWordArray = [];
@@ -32,7 +33,11 @@ function parolaPalindroma (toVerifyWord) {
         }
     }
 
-    return wordCompare;
+    if ( wordCompare === toVerifyWord.length) {
+        wordPalindrome = true
+    }
+
+    return wordPalindrome;
 }
 
 
